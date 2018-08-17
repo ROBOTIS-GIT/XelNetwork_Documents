@@ -10,6 +10,7 @@ Robots are a collection of technologies ranging from **hardware to software**. S
 ## Description
 
 The goals of this project are as follows.
+
 - Generalization of Software Mechanism in Robot Development with Embedded Technology.
 - Complete open source hardware.
 - Simpler and easier robot development through the above goals.
@@ -19,6 +20,7 @@ In detail for “Generalization of the software mechanism”, by developing a me
 In the case of “complete open source hardware”, we will **fully open all the information** (circuit diagram, artwork, firmware, software) about the hardware/software we have developed so that the user can understand the mechanism and freely modify and commercialize the hardware is.
 
 We have done research on this, and we are still thinking about better directions and methods. Here are some of the technologies we see as key:
+
 - **Sensing/control for embedded sensors/actuators** via communication protocols such as the **Dynamixel protocol**.
 - **Communicate with ROS(DDS) through RTPS** supporting  **XRCE**(eXtremely Resource Constrained Environments) such as microRTPS.
 - A core function to **arbitrate/control** between two above.

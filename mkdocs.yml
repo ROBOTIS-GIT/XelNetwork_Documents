@@ -1,1 +1,6 @@
 site_name: XelNetwork
+pages:
+    - Home: index.md
+    - OpenHardware: hardware.md
+    - OpenSoftware: software.md
+theme: readthedocs
