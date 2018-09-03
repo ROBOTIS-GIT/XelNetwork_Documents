@@ -1,6 +1,6 @@
 # Documents for XelNetwork
 
-Please refer to the [Wiki for XelNetwork](https://xelnetwork.robotis.com/) for more information regarding XelNetwork project.
+Please refer to the [Wiki for XelNetwork](http://xelnetwork.robotis.com/) for more information regarding XelNetwork project.
 
 # Related repositories
 - [CommXel](https://github.com/ROBOTIS-GIT/XelNetwork_CommXel)
