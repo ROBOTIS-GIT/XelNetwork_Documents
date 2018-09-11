@@ -38,3 +38,7 @@ The **Plug and Play(PnP)** is a powerful feature. If you want to connect the IMU
 ![](_static/diagram.png)
 
 As another characteristic of our project, we have features that are based on **FreeRTOS**(Not NuttX) and **Non-OS** which are widely used in embedded, and we will release about 100 sets free of charge as open source hardware for beta tester. It will also be available on open platforms such as TurtleBot3, which will make it easier for users to test and discuss this solution.
+
+
+## Banner
+![](_static/xelnetwork_banner.JPG)
