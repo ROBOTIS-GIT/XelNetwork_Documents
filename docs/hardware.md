@@ -1,5 +1,9 @@
 # OpenHardware
 
+## Git Repositories
+- [hardware (Schematic, Gerber, CAD, BOM)](https://github.com/ROBOTIS-GIT/XelNetwork_Hardware)
+   
+   
 <br>
 
 ## Specification
