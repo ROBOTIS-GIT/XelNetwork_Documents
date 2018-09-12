@@ -58,7 +58,28 @@ The Alpha version includes the following features: (Not yet released)
 
 <br>
 
-## Development
+## Develop Note
+#### Current Status
+
+- Support only publisher & subscriber.
+- Support only one topic per one xel.
+- Support USB to DYNAMIXEL bypass on CommXel.
+- Support basic message types.
+- PlugAndPlay (You can limit the range of IDs to search for performance)
+
+#### Plan
+- Support service, action, parameter.
+- More sophisticated real-time performance
+- Supports various message types
+- GUI program release
+- Support IDE likes Arduino for user customizing for SensorXel.
+- Support multi topics on one device.
+- Improved performance.
+- Clean code.
+
+<br>
+
+## Development (for just now)
 #### Install & Setting IDE (EclipseCDT)
 - **Dependencies**
 	- JAVA JDK (openjdk or OracleJAVA)
