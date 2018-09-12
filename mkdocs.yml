@@ -1,6 +1,6 @@
-site_name: XelNetwork
+site_name: XEL Network
 pages:
-    - Home: index.md
-    - OpenHardware: hardware.md
-    - OpenSoftware: software.md
+    - XEL Network: index.md
+    - OpenSource Hardware: hardware.md
+    - OpenSource Software: software.md
 theme: readthedocs

@@ -1,11 +1,8 @@
-# OpenHardware
+# OpenSource Hardware
 
 ## Git Repositories
 - [hardware (Schematic, Gerber, CAD, BOM)](https://github.com/ROBOTIS-GIT/XelNetwork_Hardware)
    
-   
-<br>
-
 ## Specification
 #### SensorXel
 ![](_static/sensorxel_rev_c.JPG)
@@ -59,7 +56,7 @@
 #### CommXel
 ![](_static/commxel_rev_c.JPG)
 
-  - It is an important part of creating and processing topics from XelNetwork to ROS 2, and it features an Ethernet port and a USB port.
+  - It is an important part of creating and processing topics from XEL Network to ROS 2, and it features an Ethernet port and a USB port.
 
 |Item|Description|
 |:-:|:-:|

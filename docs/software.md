@@ -1,11 +1,9 @@
-# OpenSoftware
+# OpenSource Software
 
 ## Git Repositories
 - [commXel](https://github.com/ROBOTIS-GIT/XelNetwork_CommXel)
 - [sensorXel](https://github.com/ROBOTIS-GIT/XelNetwork_SensorXel)
 - [powerXel](https://github.com/ROBOTIS-GIT/XelNetwork_PowerXel)
-
-<br>
 
 ## Getting Start
 #### Install microRTPSAgent
@@ -31,7 +29,7 @@ $ cp ./DEFAULT_FASTRTPS_PROFILES.xml ~/
 $ sudo ldconfig /usr/local/lib/
 ```
 
-#### Run XelNetwork
+#### Run XEL Network
 - Run microRTPSAgent
 ```bash
 $ cd

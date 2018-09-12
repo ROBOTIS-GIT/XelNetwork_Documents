@@ -1,4 +1,4 @@
-# XelNetwork
+# XEL Network
 
 How to build modular H/W ecosystem over ROS 2.0 & DDS
 
