@@ -48,7 +48,9 @@ $ ros2 topic list -t
 
 #### Change Xel's information using XelManager(GUI)
 With XelManager, you can change the Xel ID, change the name, type, and data type of the topic.
+
 The Alpha version includes the following features: (Not yet released)
+
 - Search connected Xels(only SensorXel, PowerXel)
 - Change Xel's ID, communication speed(Serial baudrate).
 - Change data type, data direction(send/receive), ROS2 topic name, publish interval(hz)
