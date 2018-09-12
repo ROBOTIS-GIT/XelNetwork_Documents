@@ -1,9 +1,9 @@
 # OpenSource Software
 
 ## Git Repositories
-- [commXel](https://github.com/ROBOTIS-GIT/XelNetwork_CommXel)
-- [sensorXel](https://github.com/ROBOTIS-GIT/XelNetwork_SensorXel)
-- [powerXel](https://github.com/ROBOTIS-GIT/XelNetwork_PowerXel)
+- [CommXel](https://github.com/ROBOTIS-GIT/XelNetwork_CommXel)
+- [SensorXel](https://github.com/ROBOTIS-GIT/XelNetwork_SensorXel)
+- [PowerXel](https://github.com/ROBOTIS-GIT/XelNetwork_PowerXel)
 
 ## Getting Start
 #### Install microRTPSAgent
@@ -48,7 +48,13 @@ $ ros2 topic list -t
 
 #### Change Xel's information using XelManager(GUI)
 With XelManager, you can change the Xel ID, change the name, type, and data type of the topic.
-(comming soon)
+The Alpha version includes the following features: (Not yet released)
+- Search connected Xels(only SensorXel, PowerXel)
+- Change Xel's ID, communication speed(Serial baudrate).
+- Change data type, data direction(send/receive), ROS2 topic name, publish interval(hz)
+- Read Xel's infomation(ID, model number, baudrate, data information, data, etc...)
+
+![](_static/xel_manager.png)
 
 <br>
 
@@ -134,7 +140,7 @@ $ git clone --recursive https://github.com/ROBOTIS-GIT/XelNetwork_PowerXel.git -
 - Click [Finish]
 
 #### Introduce source tree
-(comming soon)
+(coming soon)
 
 	
 	
