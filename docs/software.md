@@ -57,7 +57,7 @@ The Alpha version includes the following features: (Not yet released)
 - Read Xel's infomation(ID, model number, baudrate, data information, data, etc...)
 
 ![](_static/xel_manager.png)
-(Alpha test version)
+<center>(Alpha test version)</center>
 
 <br>
 
