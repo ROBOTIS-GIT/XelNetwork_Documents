@@ -3,4 +3,5 @@ pages:
     - XEL Network: index.md
     - OpenSource Hardware: hardware.md
     - OpenSource Software: software.md
+    - Getting Start: getting_start.md
 theme: readthedocs

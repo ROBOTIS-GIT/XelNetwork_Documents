@@ -5,63 +5,10 @@
 - [SensorXel](https://github.com/ROBOTIS-GIT/XelNetwork_SensorXel)
 - [PowerXel](https://github.com/ROBOTIS-GIT/XelNetwork_PowerXel)
 
-## Getting Start
-#### Install microRTPSAgent
-Please refer to [this link](https://micro-rtps.readthedocs.io/en/latest/installation.html#installing-the-agent-stand-alone) for detail install information.
-
-- Install microRTPSAgent stand alone on your SBC or PC. (Linux)
-```bash
-$ sudo apt update
-$ sudo apt install build-essential cmake git
-
-# If you have ROS2 installed on your PC, you do not need to install FastRTPS.
-$ git clone https://github.com/eProsima/Fast-RTPS
-$ mkdir Fast-RTPS/build && cd Fast-RTPS/build
-$ cmake -DTHIRDPARTY=ON ..
-$ sudo make install
-$ cd ../..
-
-$ git clone https://github.com/eProsima/micro-RTPS-agent.git
-$ mkdir micro-RTPS-agent/build && cd micro-RTPS-agent/build
-$ cmake -DTHIRDPARTY=ON -DCONFIG_UDP_TRANSPORT_MTU=4096 ..
-$ sudo make install
-$ cp ./DEFAULT_FASTRTPS_PROFILES.xml ~/
-$ sudo ldconfig /usr/local/lib/
-```
-
-#### Run XEL Network
-- Run microRTPSAgent
-```bash
-$ cd
-$ MicroRTPSAgent udp 2018
-```
-- Connect power to powerXel
-- Connect commXel to powerXel
-- Power on powerXel
-- Connect sensorXels
-
-#### Check topics using ROS2 or DDS application
-```bash
-#If you use ROS2
-$ ros2 topic list -t
-```
-
-#### Change Xel's information using XelManager(GUI)
-With XelManager, you can change the Xel ID, change the name, type, and data type of the topic.
-
-The Alpha version includes the following features: (Not yet released)
-
-- Search connected Xels(only SensorXel, PowerXel)
-- Change Xel's ID, communication speed(Serial baudrate).
-- Change data type, data direction(send/receive), ROS2 topic name, publish interval(hz)
-- Read Xel's infomation(ID, model number, baudrate, data information, data, etc...)
-
-![](_static/xel_manager.png)
-<center>(Alpha test version)</center>
 
 <br>
 
-## Develop Note
+## Develop Notes
 #### Current Status
 
 - Support only publisher & subscriber.
