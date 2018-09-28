@@ -129,7 +129,11 @@ $ sudo udevadm trigger
 	- Click [Finish]
 
 ### Introducing source tree structure
-(coming soon)
+ - common F/W architecture
+![](_static/common_architecture.png)
+
+ - commXEL F/W architecture
+![](_static/commxel_architecture.png)
 
 	
 	
