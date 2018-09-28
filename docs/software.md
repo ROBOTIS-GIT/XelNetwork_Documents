@@ -29,8 +29,34 @@
 
 <br>
 
-## Development (for just now)
-#### Install & Setting IDE (EclipseCDT)
+## Development
+### Get Xel's source from git
+```bash
+$ cd && mkdir -p ~/workspace/source && cd ~/workspace/source
+$ git clone --recursive https://github.com/ROBOTIS-GIT/XelNetwork_CommXel.git -b develop
+$ git clone --recursive https://github.com/ROBOTIS-GIT/XelNetwork_SensorXel.git -b develop
+$ git clone --recursive https://github.com/ROBOTIS-GIT/XelNetwork_PowerXel.git -b develop
+```
+
+### TrueStudio (IDE option #1)
+- **Install TrueStudio**
+Please refer to [this link](https://atollic.com/resources/download/) to install A
+
+- **Import Xel's project to TrueStudio's workspace**
+	- Click [File] - [Import..] on the top menu
+	- Click [Existing Projects into Workspace] in [General], click [Next >] button.
+		- Enter path as shown below.
+		- Select root directory: ~/workspace/source
+	- Select projects list below in [Projects:]
+		- commXel_app    (in project/trueStudio)
+		- commXel_boot  (in project/trueStudio)
+		- sensorXel_app   (in project/trueStudio)
+		- sensorXel_boot  (in project/trueStudio)
+		- powerXel_app    (in project/trueStudio)
+		- powerXel_boot   (in project/trueStudio)
+	- Click [Finish]
+
+### EclipseCDT (IDE option #2)
 - **Dependencies**
 	- JAVA JDK (openjdk or OracleJAVA)
 	
@@ -88,29 +114,21 @@ $ sudo udevadm trigger
 			- Name: COM_PORT
 			- Value: /dev/ttyACM0
 		
-#### Get Xel's source from git
-```bash
-$ cd && mkdir -p ~/workspace/source && cd ~/workspace/source
-$ git clone --recursive https://github.com/ROBOTIS-GIT/XelNetwork_CommXel.git -b develop
-$ git clone --recursive https://github.com/ROBOTIS-GIT/XelNetwork_SensorXel.git -b develop
-$ git clone --recursive https://github.com/ROBOTIS-GIT/XelNetwork_PowerXel.git -b develop
-```
+- **Import Xel's project to EclipseCDT's workspace**
+	- Click [File] - [Import..] on the top menu
+	- Click [Existing Projects into Workspace] in [General], click [Next >] button.
+		- Enter path as shown below.
+		- Select root directory: ~/workspace/source
+	- Select projects list below in [Projects:]
+		- commXel_app     (in project/eclipse)
+		- commXel_boot   (in project/eclipse)
+		- sensorXel_app    (in project/eclipse)
+		- sensorXel_boot   (in project/eclipse)
+		- powerXel_app     (in project/eclipse)
+		- powerXel_boot    (in project/eclipse)
+	- Click [Finish]
 
-#### Import Xel's project to EclipseCDT
-- Click [File] - [Import..] on the top menu
-- Click [Existing Projects into Workspace] in [General], click [Next >] button.
-- Enter path as shown below.
-	- Select root directory: ~/workspace/source
-- Select projects list below in [Projects:]
-	- commXel_app
-	- commXel_boot
-	- sensorXel_app
-	- sensorXel_boot
-	- powerXel_app
-	- powerXel_boot
-- Click [Finish]
-
-#### Introduce source tree
+### Introducing source tree structure
 (coming soon)
 
 	
