@@ -39,6 +39,26 @@ The Alpha version includes the following features: (Not yet released)
 ![](_static/xel_manager.png)
 <center>(Alpha test version)</center>
 
+
+#### Download XEL Manager
+```
+$ git clone https://github.com/ROBOTIS-GIT/XelNetwork_Manager.git	
+``` 
+It is support Linux and Windwos. So you can choose an excutable for your OS.
+
+- Linux
+```
+$ sudo chmod +x "YOUR_COMMXEL_PORT"    #if necessary
+$ cd ./XelNetwork_Manager/excutable/linux
+$ ./XELManager
+```
+
+- WIndows
+```
+cd ./XelNetwork_Manager/excutable/win
+./XELManager
+```
+
 #### How to change CommXEL mode
 |user button pressed time(n sec)|mode|
 |:-:|:-:|
@@ -74,7 +94,7 @@ Features not described here are not supported.
  
  ![](_static/xel_manager_use.gif)
  
-#### Run XEL Network
+## Run XEL Network
 - Run microRTPSAgent
 ```bash
 $ cd
@@ -92,4 +112,31 @@ $ ros2 topic list -t
 $ ros2 topic echo (your topic name)
 ```
 
+## Update Firmware
+In the future, we will add firmware update function on GUI.
+But, currently, you must use command line.
 	
+#### Download update program
+```
+#if you don't download previous, download it using command below
+$ git clone https://github.com/ROBOTIS-GIT/XelNetwork_Manager.git	
+``` 
+It is support Linux and Windwos. So you can choose a downloader for your OS.
+
+*CAUTION : Before upload sensorXEL or powerXEL firmware, you must change commXEL mode to DXL bypass. On the other hand, you must change commXEL mode to normal before upload commXEL firmware.*
+
+- Linux
+```
+$ sudo chmod +x "YOUR_COMMXEL_PORT"    #if necessary
+$ cd ./XelNetwork_Manager/downloader
+$ ./fw_update.sh <PORT> <Model Name>
+ ex) ./fw_update.sh /dev/ttyACM0 sensorXEL
+```
+
+- WIndows
+```
+cd ./XelNetwork_Manager/excutable/win
+./fw_update.bat <PORT> <Model Name>
+ ex) ./fw_update.bat /dev/ttyACM0 sensorXEL
+```
+
