@@ -89,12 +89,10 @@ DYNAMIXEL의 컨트롤 테이블 방식.
   - Ping에 대한 응답이 정상적으로 이루어졌다면, [**Ping**] 버튼 아래의 박스에 연결된 장치가 나타납니다.
   - 이 장치를 더블클릭하거나, 클릭 후 **Command** 박스의 [**ReadData**] 버튼을 클릭하여 컨트롤 테이블을 읽습니다.
   - 화면 왼쪽의 컨트롤 테이블에서 정보를 확인하거나 원하는 값으로 변경합니다.
-
 - 무선 네트워크 설정 (필수)
   - Agent와 통신을 하기 위해, CommXEL-W의 무선 네트워크 설정을 해야 합니다.
   - **12~15**의 아이템들을 변경해야 합니다. (예시: 위 이미지)
   - 14번(주소 124)의 경우, 위에서 Agent를 설치한 PC의 IP주소를 입력합니다.
-
 - 컨트롤 아이템 별 설명
   - **Model Number** : DYNAMIXEL 프로토콜에서 컨트롤테이블을 구분하기 위해 사용하는 모델 번호.
   - **Model Info** : 모델에 대한 추가 정보를 기록할 때 사용. (비활성화)
@@ -134,7 +132,10 @@ DYNAMIXEL의 컨트롤 테이블 방식.
 ```bash
   $ MicroXRCEAgent udp -p 2019 -r xelnetwork_default.xml.refs
 ```
-- 사용법에 관해서는 아래 명령어 혹은 [`링크`](https://github.com/ROBOTIS-GIT/ros2arduino#appendix-how-to-configure-entities-from-reference-file-available-at-011-or-above) 확인
+- 자세한 사용법에 관해서는 아래 명령어 혹은 [`링크`](https://github.com/ROBOTIS-GIT/ros2arduino#appendix-how-to-configure-entities-from-reference-file-available-at-011-or-above) 확인
+```bash
+  $ MicroXRCEAgent -h
+```
 
 ---
 
