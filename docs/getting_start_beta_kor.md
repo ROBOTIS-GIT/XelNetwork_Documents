@@ -68,18 +68,16 @@ $ git clone https://github.com/ROBOTIS-GIT/XelNetwork_Manager.git
   - MacOS: 지원 안함
 - 혹은 아래 커맨드 실행
   - Linux
-
-  ```bash
+```bash
   $ sudo usermod -a -G tty username    #필요한 경우 실행, username은 자신의 계정이름으로 변경
   $ cd ./XelNetwork_Manager/excutable/linux
   $ ./XELManager
-  ```
+```
   - WIndows
-
-  ```bash
+```bash
   > cd ./XelNetwork_Manager/excutable/win
   > ./XELManager.exe
-  ```
+```
 
 ### 설정 변경하기
 DYNAMIXEL의 컨트롤 테이블 방식.
@@ -133,10 +131,9 @@ DYNAMIXEL의 컨트롤 테이블 방식.
 ### Agent 실행
 - 위에서 기본 설정파일을 다운로드한 위치로 이동
 - 네트워크 설정에 맞게 옵션주어 실행
-
-  ```bash
+```bash
   $ MicroXRCEAgent udp -p 2019 -r xelnetwork_default.xml.refs
-  ```
+```
 - 사용법에 관해서는 아래 명령어 혹은 [`링크`](https://github.com/ROBOTIS-GIT/ros2arduino#appendix-how-to-configure-entities-from-reference-file-available-at-011-or-above) 확인
 
 ---
