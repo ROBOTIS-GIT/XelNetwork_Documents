@@ -15,10 +15,10 @@ XELNetwork는 (DYNAMI)XEL 프로토콜을 사용한 네트워크를 구축하기
 ## 패키지 구성
 
 - 베타테스터 패키지 구성
-  - CommXEL-W * 1ea
-  - PowerXEL * 1ea
-  - SensorXEL * 1ea
-  - JST 4핀케이블 * 2ea 
+    - CommXEL-W * 1ea
+    - PowerXEL * 1ea
+    - SensorXEL * 1ea
+    - JST 4핀케이블 * 2ea 
 - 하드웨어 스펙 및 핀맵은 [**hardware**](hardware.md)페이지 참조
 
 ![](_static/xelnetwork_beta_pack.png)
@@ -61,19 +61,19 @@ XELNetwork Manager라는 GUI툴을 통해 CommXEL-W의 설정 변경 가능.
 $ git clone https://github.com/ROBOTIS-GIT/XelNetwork_Manager.git
 ```
 - `XelNetwork_Manager/excutable`에서 자신의 OS에 맞는 폴더의 `XELNetwork_Manager` 실행
-  - Windows: /win/XELNetwork_Manager.exe
-  - Linux: /linux/XELNetwork_Manager
-    - Linux의 경우, 포트(/dev/ttyUSBx)에 대한 권한을 허용해야 할 수 있습니다. 
-      - `chmod` 혹은 `sudo usermod -a -G tty username` 사용할 것)
-  - MacOS: 지원 안함
+    - Windows: /win/XELNetwork_Manager.exe
+    - Linux: /linux/XELNetwork_Manager
+        - Linux의 경우, 포트(/dev/ttyUSBx)에 대한 권한을 허용해야 할 수 있습니다. 
+        - `chmod` 혹은 `sudo usermod -a -G tty username` 사용할 것)
+    - MacOS: 지원 안함
 - 혹은 아래 커맨드 실행
-  - Linux
+    - Linux
 ```bash
   $ sudo usermod -a -G tty username    #필요한 경우 실행, username은 자신의 계정이름으로 변경
   $ cd ./XelNetwork_Manager/excutable/linux
   $ ./XELManager
 ```
-  - WIndows
+    - WIndows
 ```bash
   > cd ./XelNetwork_Manager/excutable/win
   > ./XELManager.exe
@@ -84,31 +84,33 @@ DYNAMIXEL의 컨트롤 테이블 방식.
 ![](_static/xel_manager.png)
 
 - 기본 동작
-  - 올바른 **Port**와 **Baud**(rate), **Protocol** 버전을 선택합니다.
-  - **ID** 입력란에 올바른 ID(기본값 200)를 입력하고 [**Ping(ID)**] 버튼을 클릭하거나, ID와 상관 없이 모든 ID에 대해 검색을 하고 싶다면 [**Pings(All IDs)**] 버튼을 클릭합니다.
-  - Ping에 대한 응답이 정상적으로 이루어졌다면, [**Ping**] 버튼 아래의 박스에 연결된 장치가 나타납니다.
-  - 이 장치를 더블클릭하거나, 클릭 후 **Command** 박스의 [**ReadData**] 버튼을 클릭하여 컨트롤 테이블을 읽습니다.
-  - 화면 왼쪽의 컨트롤 테이블에서 정보를 확인하거나 원하는 값으로 변경합니다.
+    - 올바른 **Port**와 **Baud**(rate), **Protocol** 버전을 선택합니다.
+    - **ID** 입력란에 올바른 ID(기본값 200)를 입력하고 [**Ping(ID)**] 버튼을 클릭하거나, ID와 상관 없이 모든 ID에 대해 검색을 하고 싶다면 [**Pings(All IDs)**] 버튼을 클릭합니다.
+    - Ping에 대한 응답이 정상적으로 이루어졌다면, [**Ping**] 버튼 아래의 박스에 연결된 장치가 나타납니다.
+    - 이 장치를 더블클릭하거나, 클릭 후 **Command** 박스의 [**ReadData**] 버튼을 클릭하여 컨트롤 테이블을 읽습니다.
+    - 화면 왼쪽의 컨트롤 테이블에서 정보를 확인하거나 원하는 값으로 변경합니다.
+
 - 무선 네트워크 설정 (필수)
-  - Agent와 통신을 하기 위해, CommXEL-W의 무선 네트워크 설정을 해야 합니다.
-  - **12~15**의 아이템들을 변경해야 합니다. (예시: 위 이미지)
-  - 14번(주소 124)의 경우, 위에서 Agent를 설치한 PC의 IP주소를 입력합니다.
+    - Agent와 통신을 하기 위해, CommXEL-W의 무선 네트워크 설정을 해야 합니다.
+    - **12~15**의 아이템들을 변경해야 합니다. (예시: 위 이미지)
+    - 14번(주소 124)의 경우, 위에서 Agent를 설치한 PC의 IP주소를 입력합니다.
+
 - 컨트롤 아이템 별 설명
-  - **Model Number** : DYNAMIXEL 프로토콜에서 컨트롤테이블을 구분하기 위해 사용하는 모델 번호.
-  - **Model Info** : 모델에 대한 추가 정보를 기록할 때 사용. (비활성화)
-  - **Firmware Version** : 펌웨어 버전.
-  - **ID** : DYNAMIXEL 프로토콜에서 사용되는 ID.
-  - **Baudrate** : CommXEL-W의 USB와 연결되어 있는 UART의 속도. GUI및 Bypass모드에 영향을 주며, 이 값이 변경된다면 GUI Port의 Baud도 동일하게 설정해야 함.
-  - **ROS2 node name** : ROS2에서 사용할 노드 이름. (ros2 node list 명령어로 확인 가능)
-  - **Auto scan start ID** : 검색할 ID 범위의 시작값. PnP기능 사용 시, 주기적으로 CommXEL과 연결된 장치(SensorXEL, PowerXEL)를 검색하는데 사용됨.
-  - **Auto scan end ID** : 검색할 ID 범위의 마지막값. `Auto scan start ID`와 동일한 기능이며, 이 ID를 검색한 후 다시 `Auto scan start ID`부터 순차적으로 검색.
-  - **Auto scan interval(ms)** : PnP기능을 위한 자동 검색주기이며 단위는 milliseconds(ms). 이 주기마다 하나의 ID에 대해 검색.
-  - **DXL Master baudrate** : CommXEL-W의 DYNAMIXEL포트의 속도. 연결된 장치들(SensorXEL, PowerXEL)과 동일해야 함.
-  - **DXL Master protocol ver** : DYNAMIXEL 프로토콜의 버전. 연결된 장치들과 동일해야 함.
-  - **WiFi AP SSID** : CommXEL-W가 연결할 AP(Access Point, 무선라우터)의 SSID.
-  - **WiFi AP SSID P/W** : AP 접속 비밀번호.
-  - **Micro-XRCE-DDS Agent IP** : Agent가 설치된 PC의 IP주소.
-  - **Micro-XRCE-DDS Agent Port** : Agent에서 오픈한 Port번호.
+    - **Model Number** : DYNAMIXEL 프로토콜에서 컨트롤테이블을 구분하기 위해 사용하는 모델 번호.
+    - **Model Info** : 모델에 대한 추가 정보를 기록할 때 사용. (비활성화)
+    - **Firmware Version** : 펌웨어 버전.
+    - **ID** : DYNAMIXEL 프로토콜에서 사용되는 ID.
+    - **Baudrate** : CommXEL-W의 USB와 연결되어 있는 UART의 속도. GUI및 Bypass모드에 영향을 주며, 이 값이 변경된다면 GUI Port의 Baud도 동일하게 설정해야 함.
+    - **ROS2 node name** : ROS2에서 사용할 노드 이름. (ros2 node list 명령어로 확인 가능)
+    - **Auto scan start ID** : 검색할 ID 범위의 시작값. PnP기능 사용 시, 주기적으로 CommXEL과 연결된 장치(SensorXEL, PowerXEL)를 검색하는데 사용됨.
+    - **Auto scan end ID** : 검색할 ID 범위의 마지막값. `Auto scan start ID`와 동일한 기능이며, 이 ID를 검색한 후 다시 `Auto scan start ID`부터 순차적으로 검색.
+    - **Auto scan interval(ms)** : PnP기능을 위한 자동 검색주기이며 단위는 milliseconds(ms). 이 주기마다 하나의 ID에 대해 검색.
+    - **DXL Master baudrate** : CommXEL-W의 DYNAMIXEL포트의 속도. 연결된 장치들(SensorXEL, PowerXEL)과 동일해야 함.
+    - **DXL Master protocol ver** : DYNAMIXEL 프로토콜의 버전. 연결된 장치들과 동일해야 함.
+    - **WiFi AP SSID** : CommXEL-W가 연결할 AP(Access Point, 무선라우터)의 SSID.
+    - **WiFi AP SSID P/W** : AP 접속 비밀번호.
+    - **Micro-XRCE-DDS Agent IP** : Agent가 설치된 PC의 IP주소.
+    - **Micro-XRCE-DDS Agent Port** : Agent에서 오픈한 Port번호.
 
 ---
 
