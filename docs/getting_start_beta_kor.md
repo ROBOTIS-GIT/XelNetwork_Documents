@@ -2,6 +2,8 @@
 
 이 문서는 한국 베타테스터를 위한 매뉴얼 문서입니다.
 
+각 커맨드는 리눅스를 기준으로 작성되어 있습니다.
+
 ---
 ## 개요
 
@@ -135,6 +137,34 @@ DYNAMIXEL의 컨트롤 테이블 방식.
 - 자세한 사용법에 관해서는 아래 명령어 혹은 [`링크`](https://github.com/ROBOTIS-GIT/ros2arduino#appendix-how-to-configure-entities-from-reference-file-available-at-011-or-above) 확인
 ```bash
   $ MicroXRCEAgent -h
+```
+
+### ROS2에서 토픽 확인/전송
+- 아래 명령을 통해 토픽 확인 (아래 화면과 같이 6개의 토픽 생성)
+    - Publisher
+        - **/Power_Current** from PowerXEL
+        - **/Power_Voltage** from PowerXEL
+        - **/XEL001_analog** from SensorXEL(ID: 1)
+        - **/XEL001_gpio_in** from SensorXEL(ID: 1)
+    - Subscriber
+        - **/XEL001_gpio_out** to SensorXEL(ID: 1)
+        - **/XEL001_pwm** to SensorXEL(ID: 1) (range: 0~4095)
+```bash
+$ ros2 topic list -t
+```
+![](_static/ros_topic_list.png)
+
+
+- [ros2 CLI](https://github.com/ubuntu-robotics/ros2_cheats_sheet/blob/master/cli/cli_cheats_sheet.pdf) 명령을 통해 토픽 테스트
+    - Publisher의 경우, `ros2 topic echo`명령
+    - Subscriber의 경우, `ros2 topic pub` 명령
+
+```bash
+# echo 예시
+$ ros2 topic echo /XEL001_analog
+
+# pub 예시
+$ ros2 topic pub /XEL001_gpio_out std_msgs/msg/Bool "data: 1"
 ```
 
 ---
