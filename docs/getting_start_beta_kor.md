@@ -73,7 +73,8 @@ $ git clone https://github.com/ROBOTIS-GIT/XelNetwork_Manager.git
 ```bash
   $ sudo usermod -a -G tty username    #필요한 경우 실행, username은 자신의 계정이름으로 변경
   $ cd ./XelNetwork_Manager/excutable/linux
-  $ ./XELManager
+  $ sudo chmod a+x ./XELNetwork_Manager
+  $ ./XELNetwork_Manager
 ```
 
 ### 설정 변경하기
@@ -125,8 +126,11 @@ DYNAMIXEL의 컨트롤 테이블 방식.
 ## 데모 코드 동작 확인
 
 ### Agent 실행을 위한 기본설정파일 다운로드
-- [다운로드 링크]()
-- 관련 세부 내용은 [여기](https://github.com/ROBOTIS-GIT/ros2arduino#appendix-how-to-configure-entities-from-reference-file-available-at-011-or-above)
+- [GitHub 링크](https://raw.githubusercontent.com/ROBOTIS-GIT/XELNetworkMaster/master/xelnetwork_default.xml.refs)에서 다운 받거나 아래 명령 실행
+```bash
+$ wget https://raw.githubusercontent.com/ROBOTIS-GIT/XELNetworkMaster/master/xelnetwork_default.xml.refs
+``` 
+- 관련 세부 내용은 [여기](https://github.com/ROBOTIS-GIT/ros2arduino#appendix-how-to-configure-entities-from-reference-file-available-at-011-or-above)를 참조
 
 ### Agent 실행
 - 위에서 기본 설정파일을 다운로드한 위치로 이동
@@ -171,11 +175,13 @@ $ ros2 topic pub /XEL001_gpio_out std_msgs/msg/Bool "data: 1"
 
 ## 부가 기능
 
-### 
+(추후 추가 예정)
 
 
 ---
 
-# 
+# 개발 문서
 
 ## 개발환경 구축
+
+(추후 추가 예정)
