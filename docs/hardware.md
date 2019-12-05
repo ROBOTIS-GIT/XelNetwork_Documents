@@ -2,14 +2,12 @@
 
 ## Git Repositories
 - [hardware (Schematic, Gerber, CAD, BOM)](https://github.com/ROBOTIS-GIT/XelNetwork_Hardware)
-   
-## Specification
-#### SensorXel
-![](_static/sensorxel_rev_c.JPG)
 
-  -  It supports 5.0V, 3.3V, GND through 2x5 connector. In addition, four ADC channels are supported, and the real-time pin-to-pin changeover is done in software via three MUXs, which are SensorXel's greatest features. The three pins (MUX 0, 1, 2) to which the MUX is connected can be changed to the configuration pins of the UART, I2C, and SPI, respectively, but now the pin function for each communication method is fixed as shown in the table above.
-  - The voltage level of each data pin is 3.3V.
-  - USER_LED can be controlled by the user as desired.
+---
+
+## Specification
+### SensorXEL
+![](_static/sensorxel_rev_f.png)
   
 |Item|Description|
 |:-:|:-:|
@@ -20,18 +18,18 @@
 |SRAM | 32KB|
 |EEPROM | 4KB|
 |Clock | 32MHz|
-|USART | 2/3|
+|USART | 3/3|
 |SPI | 1/2|
 |I2C | 1/2|
-|Debug | SWD, UART|
+|Debug | SWD, USART|
 |Dynamixel Connector | TTL x 2 / RS-485 x 2 (JST)|
 |Power | Dynamixel Connector|
-|Dimensions | 34mm x 28.5mm|
-
+|Dimensions | 44mm x 44mm|
 
 <br>
-#### PowerXel
-![](_static/powerxel_rev_c.JPG)
+
+### PowerXEL
+![](_static/powerxel_rev_f.png)
 
   - The main function is power management. It is possible to shut off the power of TTL and RS485 by software and monitor the power and current supplied from external power source in 0.01V, 0.1A unit.
   - External power can be connected via SMPS, Terminal Block, and BAT connector. At this time, the recommended maximum voltage is 24V.
@@ -45,17 +43,39 @@
 |SRAM | 32KB|
 |EEPROM | 4KB|
 |Clock | 32MHz|
-|USART | 1/3|
-|Debug | SWD|
+|USART | 2/3|
+|Debug | SWD, USART|
 |Dynamixel Connector | TTL x 2 / RS-485 x 2 (JST)|
 |Power | Dynamixel Connector, SMPS, Terminal block|
-|Dimensions | 48mm x 34mm|
+|Dimensions | 44mm x 48mm(w/o.USB 44)|
+
+
+#### CommXEL-W
+![](_static/commxel_w_rev_c.png)
+
+  - It is an important part of creating and processing topics from XEL Network to ROS 2, and it features WiFi.
+
+|Item|Description|
+|:-:|:-:|
+|MPU | [ESP32 WROOM 32D](https://www.espressif.com/en/products/hardware/esp32/overview)|
+|Operation Voltage/Current | 12V ~ 24V / MAX 10A|
+|Flash | SPI 4MB|
+|SRAM | 520KB|
+|Clock | 240MHz|
+|WiFi | 1/1|
+|BLE | 1/1|
+|USART | 3/3|
+|Debug | USART|
+|External I/O | 20/40|
+|Dynamixel Connector | TTL x 2 / RS-485 x 2 (JST)|
+|Power | Dynamixel Connector|
+|Dimensions | 44mm x 45mm(w/o.USB 44)|
 
 
 <br>
-#### CommXel
-![](_static/commxel_rev_c.JPG)
 
+#### CommXEL
+![](_static/commxel_rev_e.png)
   - It is an important part of creating and processing topics from XEL Network to ROS 2, and it features an Ethernet port and a USB port.
 
 |Item|Description|
@@ -64,11 +84,28 @@
 |Operation Voltage/Current | 12V ~ 24V / MAX 10A|
 |Flash | 1MB|
 |SRAM | 320KB|
-|Clock | 216MHz|
+|Clock | 168Mhz for baudrate (up to 216MHz)|
 |ETHERNET | 1/1|
 |USB | 1/1|
 |USART | 2/4|
 |Debug | SWD, USART|
 |Dynamixel Connector | TTL x 2 / RS-485 x 2 (JST)|
 |Power | Dynamixel Connector|
-|Dimensions | 70mm x 26mm|
+|Dimensions | 76.7mm x 45mm(w/o.USB 44)|
+
+---
+
+## PinMap
+
+### SensorXEL
+![](_static/pinmap_sensorxel_rev_f_1.png)
+![](_static/pinmap_sensorxel_rev_f_2.png)
+
+### PowerXel
+![](_static/pinmap_powerxel_rev_f.png)
+
+### CommXEL-W
+![](_static/pinmap_commxel_w_rev_c.png)
+
+### CommXEL
+![](_static/pinmap_commxel_rev_e.png)

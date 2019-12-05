@@ -4,4 +4,5 @@ pages:
     - OpenSource Hardware: hardware.md
     - OpenSource Software: software.md
     - Getting Start: getting_start.md
+    - Getting Start For Korean BetaTester: getting_start_beta_kor.md
 theme: readthedocs

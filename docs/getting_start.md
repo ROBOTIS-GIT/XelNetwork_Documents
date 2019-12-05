@@ -1,43 +1,43 @@
 # Getting Start
 
 ## Install dependancies
-#### Install microRTPSAgent
-Please refer to [this link](https://micro-rtps.readthedocs.io/en/latest/installation.html#installing-the-agent-stand-alone) for detail install information.
+
+In the Arduino environment, we use the ros2arduino library. And this library uses eProsima's Micro-XRCE-DDS Client library to use DDS service.
+
+Micro-XRCE-DDS consists of Client and Agent, and Agent acts as a bridge between Client and FastRTPS (ROS2).
+And there are several dependencies between them, so you need to install each version correctly before you can use it.
+
+XELNetwork supports the Arduino environment, and Arduino uses a library called [ros2arduino](https://github.com/ROBOTIS-GIT/ros2arduino). In addition, version information is indicated in the manual of this library, so please use this as a guide.
+
+#### Install Micro-XRCE-DDS Agent
+Please refer to [this link](https://micro-xrce-dds.readthedocs.io/en/latest/installation.html#installing-the-agent-stand-alone) for detail install information.
 
 - Install microRTPSAgent stand alone on your SBC or PC. (Linux)
 ```bash
 $ sudo apt update
 $ sudo apt install build-essential cmake git
 
-# If you have ROS2 installed on your PC, you do not need to install FastRTPS.
-$ git clone https://github.com/eProsima/Fast-RTPS
-$ mkdir Fast-RTPS/build && cd Fast-RTPS/build
-$ cmake -DTHIRDPARTY=ON ..
+# When you download this you must select the appropriate version.
+$ git clone https://github.com/eProsima/Micro-XRCE-DDS-Agent.git -b <Tag_Version>
+$ cd Micro-XRCE-DDS-Agent
+$ mkdir build && cd build
+$ cmake ..
+$ make
 $ sudo make install
-$ cd ../..
-
-$ git clone https://github.com/eProsima/micro-RTPS-agent.git
-$ mkdir micro-RTPS-agent/build && cd micro-RTPS-agent/build
-$ cmake -DTHIRDPARTY=ON -DCONFIG_UDP_TRANSPORT_MTU=4096 ..
-$ sudo make install
-$ cp ./DEFAULT_FASTRTPS_PROFILES.xml ~/
 $ sudo ldconfig /usr/local/lib/
 ```
 
-## Change XEL's information using XEL Manager(GUI)
-With XELManager, you can change the XEL ID, change the name and type of the topic.
-You must have DYNAMIXEL(DXL) bypass device (like U2D2).
-But, CommXEL have DXL bypass feature, so you can change CommXEL mode and use it.
+## Change CommXEL's information using XEL Manager(GUI)
+With XELManager, you can change the XEL ID, change the node name and baudrate and network infos.
 
-The Alpha version includes the following features: (Not yet released)
+The Beta version includes the following features:
 
-- Search connected Xels(only SensorXEL, PowerXEL, DYNAMIXEL)
+- Search connected CommXEL-W
 - Change XEL's ID, communication speed(Serial baudrate).
-- Change data type, data direction(send/receive), ROS2 topic name, publish interval(hz)
-- Read XEL's infomation(ID, model number, baudrate, data information, data, etc...)
+- Change ROS2 node name, scan range for PnP, network infos.
 
 ![](_static/xel_manager.png)
-<center>(Alpha test version)</center>
+<center>(Beta test version)</center>
 
 
 #### Download XEL Manager
@@ -59,40 +59,23 @@ cd ./XelNetwork_Manager/excutable/win
 ./XELManager
 ```
 
-#### How to change CommXEL mode
-|user button pressed time(n sec)|mode|
-|:-:|:-:|
-|1 > n|Normal|
-|5> n > 1|DXL bypass|
-|5 < n|Control Table Access|
+#### How to change CommXEL-W mode
+|user button pressed time(n sec)|mode|note|
+|:-:|:-:|:-:|
+|1 > n > 0.1|XELNetwork PnP|ROS2|
+|n >= 1|USB to DXL bypass|It is set to the baud rate of Master(DXL) and Slave(USB) set in the manager.|
 
-#### How to scan XELs
-
-- Change mode
-
-|XEL|CommXEL mode|
-|:-:|:-:|
-|SensorXEL|DXL bypass|
-|PowerXEL|DXL bypass|
-|DYNAMIXEL|DXL bypass|
-|CommXEL|Control Table Access|
-
-- Click [Ping] button on XEL Manager.
-*CAUTION: If XEL's ids are duplicated, you must change ID(Just connected 1 XEL) before ping.* 
-
-#### How to change XEL's information
+#### How to change CommXEL-W's configuration.
 Features not described here are not supported.
 
- -  Connect XEL Network (PowerXEL, CommXEL, SensorXELs)
- - Connect USB cable (CommXEL -- PC)
- - Change CommXEL mode (DXL bypass or Control Table Access)
- - Click [Ping] button
+ - Connect USB cable (CommXEL-W -- PC)
+ - Change CommXEL mode (XELNetwork PnP mode)
+ - Select the correct port, Baud and Protocol version.
+ - Enter the ID and click [Ping] or click [Pings].
  - Select XEL ID in [common] box
  - Click [ReadData] or double-click XEL ID in [common] box
  - Check XEL's information on XEL tab
  - Change value(only RW) on XEL tab when you want changing values
- 
- ![](_static/xel_manager_use.gif)
  
 ## Run XEL Network
 - Run microRTPSAgent
