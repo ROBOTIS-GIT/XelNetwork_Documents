@@ -101,11 +101,17 @@
 ![](_static/pinmap_sensorxel_rev_f_1.png)
 ![](_static/pinmap_sensorxel_rev_f_2.png)
 
+<br>
+
 ### PowerXel
 ![](_static/pinmap_powerxel_rev_f.png)
 
+<br>
+
 ### CommXEL-W
 ![](_static/pinmap_commxel_w_rev_c.png)
+
+<br>
 
 ### CommXEL
 ![](_static/pinmap_commxel_rev_e.png)
