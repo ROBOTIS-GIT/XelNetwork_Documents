@@ -175,13 +175,82 @@ $ ros2 topic pub /XEL001_gpio_out std_msgs/msg/Bool "data: 1"
 
 ## 부가 기능
 
-(추후 추가 예정)
+### CommXEL-W 모드
+CommXEL-W에는 두가지 모드가 존재
+|모드|설명|진입방법|
+|:-:|:-:|:-:|
+|Plug and Play|기본 기능|User Button을 1초 미만(50ms 이상) 누른 후 떼기|
+|Bypass|USB-DXL 데이터 바이패스|User Button을 1초 이상 누른 후 떼기|
 
+![](_static/pinmap_commxel_w_rev_c.png)
+
+USB기준 동작은 아래와 같음
+|모드|USB 동작|
+|:-:|:-:|
+|Plug and Play|Config Tool을 통해 설정 변경 가능|
+|Bypass|바이패스 통신, 속도는 1Mbps로 고정(업로드용)|
+
+<br>
 
 ---
 
-# 개발 문서
+# 개발자 문서
+
+## 참여 가능 레퍼지토리
+|레퍼지토리|관련 사항|
+|:-:|:-:|
+|[ROBOTIS-GIT/Arduino_Core_STM32](https://github.com/ROBOTIS-GIT/Arduino_Core_STM32)|SensorXEL, PowerXEL|
+|[ROBOTIS-GIT/arduino-esp32](https://github.com/ROBOTIS-GIT/arduino-esp32)|CommXEL-W|
+|[ROBOTIS-GIT/XELNetworkMaster](https://github.com/ROBOTIS-GIT/XELNetworkMaster)|XELNetwork PnP의 마스터 기능을 위한 라이브러리|
+|[ROBOTIS-GIT/XELNetworkSlave](https://github.com/ROBOTIS-GIT/XELNetworkSlave)|XELNetwork PnP의 슬레이브 기능을 위한 라이브러리|
+|[ROBOTIS-GIT/Dynamixel2Arduino](https://github.com/ROBOTIS-GIT/Dynamixel2Arduino)|DYNAMIXEL 프로토콜 라이브러리|
+|[ROBOTIS-GIT/ros2arduino](https://github.com/ROBOTIS-GIT/ros2arduino)|ROS2와 통신하기 위한 라이브러리|
+|[ROBOTIS-GIT 내의 XELNetwork_* 레퍼지토리](https://github.com/ROBOTIS-GIT?utf8=%E2%9C%93&q=XELNetwork&type=&language=)|하드웨어, 로더, GUI, 문서 등| 
 
 ## 개발환경 구축
+- 개발환경은 아두이노IDE를 지원
+- 아두이노 설치 및 기본 사용법에 관해서는 아래 링크 참조
+    - [아두이노IDE 설치](https://www.arduino.cc/en/Main/Software)
+    - [아두이노 사용법](https://www.arduino.cc/en/Guide/HomePage)
 
-(추후 추가 예정)
+### 보드 패키지 설치
+- [공식 설치 방법 링크](https://www.arduino.cc/en/Guide/Cores)
+<br>
+
+- 3rd Party로 URL 추가하기
+    - https://raw.githubusercontent.com/ROBOTIS-GIT/Arduino_Core_STM32/master/package_stm_xelnetwork_index.json
+    - https://raw.githubusercontent.com/ROBOTIS-GIT/arduino-esp32/master/package_esp32_xelnetwork_index.json
+![](_static/add_url_thirdparty.png)
+
+- 보드 매니저에서 설치
+    - "XELNetwork" 검색 후, 아래의 두 패키지 설치
+![](_static/install_package_using_boards_manager.png)
+![](_static/select_board.png)
+
+### 라이브러리 설치
+- [공식 설치 방법 링크](https://www.arduino.cc/en/guide/libraries)
+<br>
+
+- 라이브러리 매니저에서 설치 (공식 링크 참조)
+    - ros2arduino
+![](_static/ros2arduino.png)
+
+- 수동 설치 (압축파일 방식, 공식 링크의 Manual installation 참조)
+    - [Dynamixel2Arduino](https://github.com/ROBOTIS-GIT/Dynamixel2Arduino/releases/tag/0.4.0-xel)
+    - [XELNetworkMaster](https://github.com/ROBOTIS-GIT/XELNetworkMaster)
+    - [XELNetworkSlave](https://github.com/ROBOTIS-GIT/XELNetworkSlave)
+
+### 의존성 설치
+- (Linux) esp32 for XELNetwork (CommXEL-W)
+```bash
+$ sudo apt install python-pip
+$ pip2 install pyserial  #dependancy for esptool.py
+```
+
+- (Linux) STM32 cores for XELNetwork (PowerXEL, SensorXEL)
+```bash
+$ cd <YOUR ARDUINO SKETCHBOOK FOLDER>/packages/STM32_XELNetwork/hardware/stm32/0.0.1/tools/xel_loader/linux
+$ sudo chmod +x xel_loader  #excution permission for xel_loader
+```
+
+
