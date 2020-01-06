@@ -177,6 +177,7 @@ $ ros2 topic pub /XEL001_gpio_out std_msgs/msg/Bool "data: 1"
 
 ### CommXEL-W 모드
 CommXEL-W에는 두가지 모드가 존재
+
 |모드|설명|진입방법|
 |:-:|:-:|:-:|
 |Plug and Play|기본 기능|User Button을 1초 미만(50ms 이상) 누른 후 떼기|
@@ -185,6 +186,7 @@ CommXEL-W에는 두가지 모드가 존재
 ![](_static/pinmap_commxel_w_rev_c.png)
 
 USB기준 동작은 아래와 같음
+
 |모드|USB 동작|
 |:-:|:-:|
 |Plug and Play|Config Tool을 통해 설정 변경 가능|
